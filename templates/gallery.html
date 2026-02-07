@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <h1>She said YES! ❤️</h1>
+    <p style="font-size: 1.5rem; margin: 2rem 0;">Collect your gifts from your husband ❤️</p>
+
+    <div class="gallery-container">
+        {% for image in images %}
+        <img src="{{ image }}" class="gallery-img" alt="Us">
+        {% endfor %}
+    </div>
+
+    {% if not images %}
+    <p><i>(No photos uploaded yet. Use <a href="/upload">/upload</a> to add some!)</i></p>
+    {% endif %}
+</div>
+<script>
+    // Launch more hearts on load
+    window.onload = function () {
+        for (let i = 0; i < 50; i++) {
+            createHeart();
+        }
+    }
+</script>
+{% endblock %}

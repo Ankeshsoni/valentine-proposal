@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <h1>Upload Our Photos</h1>
+    <form action="/api/upload" method="post" enctype="multipart/form-data" class="upload-form">
+        <input type="file" name="files" multiple accept="image/*" required>
+        <button type="submit" class="btn btn-yes" style="font-size: 1rem;">Upload</button>
+    </form>
+    <br>
+    <a href="/">Back to Home</a>
+</div>
+{% endblock %}
